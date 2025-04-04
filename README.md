@@ -1,4 +1,4 @@
-Adicionar usuarios 
+#Adicionar usuarios 
 
 useradd --help
 useradd  nomedousuario
