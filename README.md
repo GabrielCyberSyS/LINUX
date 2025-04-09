@@ -71,15 +71,20 @@ gpasswd -d gabriel  sudo     remove usuario gabriel do grupo sudo
 
 usermod -G adm.sudo  gabriel     adiciona o usuario grabriel no grupo adm e sudo
 
+ 
 
 
+RWX   |  RWX  |   RWX
+DONO  | GRUPO | OUTROS
+
+DRWXR-XR-X       d direotry dono read wire execute, grupo read execute, outros read execute
+
+drwxr-xr-x   2 root root    4096 Apr  9 13:10 ADM
 
 
+chown  gabriel:GRp_Adm /adm/    chage owner   mudar dono grupo   ususario dno , nome grupo  ed diretorio
 
-
-
-
-
+drwxr-xr-x   2 cybers Grp_Adm    4096 Apr  9 13:10 ADM
 
 
 
