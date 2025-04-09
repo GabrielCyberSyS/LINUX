@@ -56,7 +56,37 @@ echo "criando usuarios no sistema"
 
 ./criarusuario.sh
 ------------------------------------------------------------------------------------------------------------
+Gereciar grupos
 cat /etc/groups
+usermod --help
+
+
+adicionar grupos
+groupadd GRP_Adm  cria um grupo com nome GRP_adm
+
+groupdel   deletar grupo
+
+gpaasswd  --help
+gpasswd -d gabriel  sudo     remove usuario gabriel do grupo sudo 
+
+usermod -G adm.sudo  gabriel     adiciona o usuario grabriel no grupo adm e sudo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
