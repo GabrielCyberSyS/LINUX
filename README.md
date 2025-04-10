@@ -28,15 +28,17 @@ usermod -c "syadm"
 usermod -s /bin/bash
 
 
+usermod -G gabriel sudo   adiciona a permissao root para gabriel
+
 
 
 -----------------------------------------------------------------------------------------------
-criar ou resetar senha usuario
+#criar ou resetar senha usuario
 passwd gabriel
 passwd gabriel -e    (faz com que a senha tenha ser traoca proximo login)
 
 ----------------------------------------------------------------------------------
-mudar usuario logado 
+# mudar usuario logado 
 su nomedoususario
 
 ver ususarios 
@@ -56,44 +58,42 @@ echo "criando usuarios no sistema"
 
 ./criarusuario.sh
 ------------------------------------------------------------------------------------------------------------
-Gereciar grupos
-cat /etc/groups
-usermod --help
+# gerenciar grupos
+
+cat /etc/groups                    - verificar os grupos criados
+
+groupadd Grp_adm                    -adiciona um grupo com nome adm
+groupadd GRP_teste                  - adiciona um grupo com nome teste
+
+groupdel nomedogrupo                 -deleta grupo      
+
+usermod -G Grp_teste gabriel         -   modifica o usuario gabriel para o grupo teste adiciona
+
+gpasswd --help
+gpasswd -d gabriel sudo           -  remove o ususario gabriel do grupo sudo 
 
 
-adicionar grupos
-groupadd GRP_Adm  cria um grupo com nome GRP_adm
+useradd gabriel  -c "administrador" -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G Grp-adm
 
-groupdel   deletar grupo
+---------------------------------------------------------------------------------------------------------------------
+congecendo sistema permissao
 
-gpaasswd  --help
-gpasswd -d gabriel  sudo     remove usuario gabriel do grupo sudo 
-
-usermod -G adm.sudo  gabriel     adiciona o usuario grabriel no grupo adm e sudo
-
- 
+RWX   |   RWX   |  RWX
+DONO  |  GRUPO  | OUTROS
 
 
-RWX   |  RWX  |   RWX
-DONO  | GRUPO | OUTROS
+       usuario | grupo | diretorio
+chown  gabriel:Grp_adm /ADM    change owner    gabriel vira dono do diretorio e troca o grupo dono para Grp_adm
 
-DRWXR-XR-X       d direotry dono read wire execute, grupo read execute, outros read execute
+ls -l
+drwxr-xr-x   2 gabriel Grp_Adm    4096 Apr  9 13:10 ADM
+---------------------------------------------------------------------
+mudar permissao diretorio 
+chmod
+Read | Wire | execute | none
+4    |   2  |   1     | 0
+-----------------------------
 
-drwxr-xr-x   2 root root    4096 Apr  9 13:10 ADM
+─# chmod 760 /ADM/
 
-
-chown  gabriel:GRp_Adm /adm/    chage owner   mudar dono grupo   ususario dno , nome grupo  ed diretorio
-
-drwxr-xr-x   2 cybers Grp_Adm    4096 Apr  9 13:10 ADM
-
-
-
-
-
-
-
-
-
-
-
-
+drwxrw----   2 cybers Grp_Adm    4096 Apr  9 13:10 ADM
