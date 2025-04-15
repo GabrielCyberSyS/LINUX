@@ -3,9 +3,9 @@
 echo "Criando ususarios.."
 
 mdkdir /publico
-mdkir /adm
-mdkir /ven
-mdkir /sec
+mkdir /adm
+mkdir /ven
+mkdir /sec
 
 echo "Criando grupos de usuarios.."
 
