@@ -9,7 +9,7 @@ mkdir /sec
 
 echo "Criando grupos de usuarios.."
 
-groupadd GRP_AD
+groupadd GRP_ADM
 groupadd GRP_VEN
 groupadd GRP_SEC
 
