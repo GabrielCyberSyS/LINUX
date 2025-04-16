@@ -2,7 +2,7 @@
 
 echo "Criando ususarios.."
 
-mdkdir /publico
+mkdir /publico
 mkdir /adm
 mkdir /ven
 mkdir /sec
