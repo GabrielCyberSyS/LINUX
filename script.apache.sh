@@ -9,5 +9,5 @@ echo " Baixando app aplicacao..."
 cd /tmp
 wget https://github.com/denilsonbonatti/linux-site-dio/arquive/refs/heads/main.zip
 unzip main.zip
-cd linux-site-dio
+cd linux-site-dio-main
 cp-R * /var/www/html/
