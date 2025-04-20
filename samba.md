@@ -40,7 +40,9 @@ cisco@labvm:/mnt/disco2$
 
 
 cisco@labvm:/mnt/disco2$ systemctl enable smbd
-Synchronizing state of smbd.service with SysV service script with /lib/systemd/systemd-sysv-install.
-Executing: /lib/systemd/systemd-sysv-install enable smbd
+
+ systemctl restart smbd            
+ systemctl enable smdb          iniciar com sistema
+ 
 
 --------------------------------------
