@@ -14,7 +14,7 @@ guest ok = yes
 guest only = yes
 
 
-
+~~~~
 cisco@labvm:/mnt/disco2$ systemctl restart smbd
 
 cisco@labvm:/mnt/disco2$ systemctl status smbd
@@ -35,6 +35,7 @@ cisco@labvm:/mnt/disco2$ systemctl status smbd
              ├─2082 /usr/sbin/smbd --foreground --no-process-group
              ├─2083 /usr/sbin/smbd --foreground --no-process-group
              └─2084 /usr/lib/x86_64-linux-gnu/samba/samba-bgqd --ready-signal-fd=45 --parent-watch-fd=11 --debuglevel=0 -F
+~~~~
 cisco@labvm:/mnt/disco2$ 
 
 
